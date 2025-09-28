@@ -1,8 +1,7 @@
 // ======== RSG CONFIG (edit these) ========
 const COMPANY_NAME = "RSG Logistics, LLC";
 
-// Put your Google Apps Script Webhook URL here (the script that saves to Drive + Sheet)
-const WEBHOOK_URL = "https://script.google.com/macros/s/PASTE_YOUR_SCRIPT_URL_HERE/exec";
+https://script.google.com/macros/s/AKfycbzmWFnZYlloDuzSNyQgy3sh1gQCmf-jYHGZlf5bIIafsKv3Q3RvY0pt57sZlU4UNLjY/exec
 
 // Support contacts (prefilled)
 const SUPPORT_EMAIL = "rsg.support@example.com";
