@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RSG Inspection – Pre/Post Trip</title>
+<meta name="theme-color" content="#0b5ed7" />
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<header class="topbar">
+<h1>RSG Inspection</h1>
+<p class="subtitle">Pre/Post Trip Checklist</p>
+</header>
+
+<main class="container">
+<form id="inspectionForm" autocomplete="on">
+<fieldset>
+<legend>Trip Info</legend>
+<label>
+Date/Time
+<input type="datetime-local" name="timestamp" id="timestamp" required />
+</label>
+<label>
+Driver Name
+<input type="text" name="driver_name" placeholder="First Last" required />
+</label>
+<label>
+Truck / Unit #
+<input type="text" name="unit_number" placeholder="e.g., 4300 or M2" required />
+</label>
+<label>
+Odometer (mi)
+<input type="number" name="odometer" inputmode="numeric" min="0" step="1" required />
+</label>
+<label>
+Inspection Type
+<select name="inspection_type" required>
+<option value="">Select…</option>
+<option value="pre">Pre-Trip</option>
+<option value="post">Post-Trip</option>
+</select>
+</label>
+</fieldset>
+
+<fieldset>
+<legend>Checklist</legend>
+<div class="grid2">
+<label><input type="checkbox" name="checks" value="Lights"> Lights</label>
+<label><input type="checkbox" name="checks" value="Tires"> Tires</label>
+<label><input type="checkbox" name="checks" value="Brakes"> Brakes</label>
+<label><input type="checkbox" name="checks" value="Mirrors"> Mirrors</label>
+<label><input type="checkbox" name="checks" value="Horn"> Horn</label>
+<label><input type="checkbox" name="checks" value="Wipers"> Wipers</label>
+<label><input type="checkbox" name="checks" value="Fluids"> Fluids</label>
+<label><input type="checkbox" name="checks" value="Leaks"> Leaks</label>
+<label><input type="checkbox" name="checks" value="Coupling"> Coupling/Securement</label>
+<label><input type="checkbox" name="checks" value="EmergencyKit"> Emergency Kit</label>
+</div>
+</fieldset>
+
+<fieldset>
+<legend>Notes / Defects</legend>
+<textarea name="notes" rows="4" placeholder="Describe defects or issues…"></textarea>
+<label class="inline">
+<input type="checkbox" name="defects_found" id="defects_found"> Defects found
+</label>
+<label class="inline">
+<input type="checkbox" name="roadworthy" id="roadworthy" checked> Vehicle is roadworthy
+</label>
+</fieldset>
+
+<div class="actions">
+<button type="submit" id="submitBtn">Submit Inspection</button>
+<button type="button" id="saveOfflineBtn">Save Offline</button>
+<button type="button" id="syncBtn">Sync Pending</button>
+</div>
+
+<p class="helper" id="statusMsg" role="status" aria-live="polite"></p>
+</form>
+
+<section class="pending" id="pendingSection" hidden>
+<h2>Pending (Offline) Submissions</h2>
+<ul id="pendingList"></ul>
+</section>
+</main>
+
+<footer class="footnote">
+<small>
+<span id="companyName">RSG Logistics, LLC</span> •
+Support: <a id="supportEmail" href="#">email</a> •
+<a id="supportPhone" href="#">phone</a>
+</small>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
